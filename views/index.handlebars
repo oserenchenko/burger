@@ -1,34 +1,55 @@
 <h1>Eat Da Burger!</h1>
 
-<h4>Not Devoured:</h4>
-<div class="notDevoured">
-  {{#each burger}}
-    {{#unless this.devoured}}
-      <p>{{this.id}}. {{this.burger_name}}</p>
-      <button class="devour-burger" data-id="{{this.id}}">Devour</button>
-    {{/unless}}
-  {{/each}}
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 form">
+      <h3>Add a Burger</h3>
+      <form class="create-form">
 
-<h4>Not Devoured:</h4>
-<div class="devoured">
-  {{#each burger}}
-    {{#if this.devoured}}
-      <p>{{this.id}}. {{this.burger_name}}</p>
-    {{/if}}
-  {{/each}}
-</div>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
+        <div class="form-group">
+          <label for="burger">Burger Name:</label>
+          <input type="text" id="burger" name="name">
+        </div>
+    
+        <button type="submit" id="add-burger" class="btn btn-dark">Add Burger</button>
+      </form>
+    </div>
   </div>
 
-  <button type="submit" id="add-burger">Add Burger</button>
-</form>
+  <div class="row">
+    <div class="col-sm-12">
+      <img class="imgMobile" src="/assets/img/burger2.jpg">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-12 burgers">
+      <h3>Not Devoured:</h3>
+      <div class="notDevoured">
+        {{#each burger}}
+          {{#unless this.devoured}}
+            <p>{{this.id}}. {{this.burger_name}} <button class="devour-burger btn btn-dark" data-id="{{this.id}}">Devour</button> </p>
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 text-center image">
+      <img class="img-fluid imgLarge" src="/assets/img/burger2.jpg">
+    </div>
+
+    <div class="col-md-4 col-sm-12 burgers">
+      <h3>Devoured:</h3>
+      <div class="devoured">
+        {{#each burger}}
+          {{#if this.devoured}}
+            <p>{{this.id}}. {{this.burger_name}}</p>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script type="text/javascript">
