@@ -1,41 +1,39 @@
-<h1>Eat Da Burger!</h1>
+<h1> <img class="burger-logo" src="/assets/img/burgerlogo.png">Eat Da Burger!</h1>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-12 form">
       <h3>Add a Burger</h3>
       <form class="create-form">
-
         <div class="form-group">
           <label for="burger">Burger Name:</label>
           <input type="text" id="burger" name="name">
+          <button type="submit" id="add-burger" class="btn btn-dark">Add</button>
         </div>
-    
-        <button type="submit" id="add-burger" class="btn btn-dark">Add Burger</button>
       </form>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-12">
-      <img class="imgMobile" src="/assets/img/burger2.jpg">
+      <img class="imgMobile burgerpic" src="/assets/img/burger.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-md-4 col-sm-12 burgers">
       <h3>Not Devoured:</h3>
       <div class="notDevoured">
         {{#each burger}}
           {{#unless this.devoured}}
-            <p>{{this.id}}. {{this.burger_name}} <button class="devour-burger btn btn-dark" data-id="{{this.id}}">Devour</button> </p>
+            <p>{{this.id}}. {{this.burger_name}} <button class="devour-burger btn btn-light" data-id="{{this.id}}">Devour</button> </p>
           {{/unless}}
         {{/each}}
       </div>
     </div>
 
     <div class="col-md-4 col-sm-12 text-center image">
-      <img class="img-fluid imgLarge" src="/assets/img/burger2.jpg">
+      <img class="img-fluid imgLarge burgerpic" src="/assets/img/burger.png">
     </div>
 
     <div class="col-md-4 col-sm-12 burgers">

@@ -1,6 +1,7 @@
 body {
   font-family: 'Monda', sans-serif;
   text-align: center;
+  background-color: rgb(190, 155, 161);
 }
 
 .form {
@@ -12,13 +13,22 @@ body {
   padding-right: 0px;
 }
 
-
 h1 {
   font-family: 'Fugaz One', cursive;
   text-transform: uppercase;
   margin: 20px;
   font-size: 50px;
 }
+
+.burger-logo {
+  width: 60px;
+  margin-right: 10px;
+  margin-top: -15px;
+}
+
+/* .burgerpic {
+  margin-top: -100px;
+} */
 
 h3 {
   font-size: 30px;
@@ -28,9 +38,14 @@ p {
   font-size: 15px;
 }
 
+input {
+  height: 40px;
+}
+
 .devour-burger {
   display: inline;
   font-size: 12px;
+  background-color: rgb(207, 204, 204);
 }
 
 .imgMobile {
