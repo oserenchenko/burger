@@ -19,6 +19,18 @@
   {{/each}}
 </div>
 
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="name">
+  </div>
+
+  <button type="submit" id="add-burger">Add Burger</button>
+</form>
+
+
 <script type="text/javascript">
   $(".devour-burger").on("click", function(event) {
     event.preventDefault();
@@ -32,6 +44,26 @@
       function() {
         console.log("updated id ", id);
         // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $("#add-burger").on("click", function(event) {
+    event.preventDefault();
+
+    var newBurger = {
+      burger_name: $("#burger").val().trim()
+    };
+
+    console.log(newBurger);
+
+    $.ajax("api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("created new movie");
         location.reload();
       }
     );
