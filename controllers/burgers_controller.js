@@ -9,13 +9,13 @@ router.get("/", function (req, res) {
     var burObj = {
       burger: data
     }
+    console.log(burObj);
+    res.render("index", burObj);
   });
-  console.log(burObj);
-  res.render("index", burObj);
 });
 
 router.post("/api/burgers", function (req, res) {
-  burger.create("burger_name", req.params.name, function (results) {
+  burger.create("burger_name", req.body.name, function (results) {
     res.json({
       id: results.insertId
     });
@@ -23,8 +23,8 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-  burger.update("devoured", "true", "id", req.params.id, function (results) {
-    if (result.changedRows == 0) {
+  burger.update("devoured", true, "id", req.params.id, function (results) {
+    if (results.changedRows == 0) {
       return res.status(404).end();
     } else {
       res.status(200).end();

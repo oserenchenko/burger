@@ -1,4 +1,4 @@
-var connection = require("connection");
+var connection = require("../config/connection.js");
 
 function selectAll(table, cb) {
   var queryString = "SELECT * FROM ??";
@@ -8,7 +8,7 @@ function selectAll(table, cb) {
   });
 }
 
-function insertOne(table, colInsert, valInput) {
+function insertOne(table, colInsert, valInput, cb) {
   var queryString = "INSERT INTO ?? (??) VALUES (?)";
   connection.query(queryString, [table, colInsert, valInput], function (err, result) {
     if (err) throw err;
@@ -16,12 +16,12 @@ function insertOne(table, colInsert, valInput) {
   });
 }
 
-function updateOne(table, colUpdate, valUpdate, colName, val) {
+function updateOne(table, colUpdate, valUpdate, colName, val, cb) {
   var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-  connection.query(queryString, [table, colUpdate, valUpdate, colName, val], function(err, results) {
+  connection.query(queryString, [table, colUpdate, valUpdate, colName, val], function(err, result) {
     if(err) throw err;
     cb(result);
-  })
+  });
 }
 
 var orm = {

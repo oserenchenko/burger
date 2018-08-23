@@ -1,0 +1,39 @@
+<h1>Eat Da Burger!</h1>
+
+<h4>Not Devoured:</h4>
+<div class="notDevoured">
+  {{#each burger}}
+    {{#unless this.devoured}}
+      <p>{{this.id}}. {{this.burger_name}}</p>
+      <button class="devour-burger" data-id="{{this.id}}">Devour</button>
+    {{/unless}}
+  {{/each}}
+</div>
+
+<h4>Not Devoured:</h4>
+<div class="devoured">
+  {{#each burger}}
+    {{#if this.devoured}}
+      <p>{{this.id}}. {{this.burger_name}}</p>
+    {{/if}}
+  {{/each}}
+</div>
+
+<script type="text/javascript">
+  $(".devour-burger").on("click", function(event) {
+    event.preventDefault();
+    
+    var id = $(this).data("id");
+
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT"
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+</script>

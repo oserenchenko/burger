@@ -7,17 +7,17 @@ var burger = {
     });
   },
 
-  create: function(cb) {
+  create: function(colInsert, valInput, cb) {
     orm.insertOne("burgers", colInsert, valInput, function(res) {
       cb(res);
     });
   },
 
-  update: function(cb) {
-    orm.updatedOne("burgers", colUpdate, valUpdate, colName, val, function(res) {
+  update: function(colUpdate, valUpdate, colName, val, cb) {
+    orm.updateOne("burgers", colUpdate, valUpdate, colName, val, function(res) {
       cb(res);
     });
   }
 }
 
-module.exports= burger;
+module.exports = burger;
