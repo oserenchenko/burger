@@ -22,31 +22,34 @@ once inside the burger folder, run
 ```
 npm install
 ```
+then, start the server by running 
+```
+node server.js
+```
+finally, open your prefferred browser and go to
+```
+localhost:8080
+```
 
 ## Built With
-
 * HTML - website structure
 * [CSS](https://css-tricks.com/) - styling
 * [Bootstrap](https://getbootstrap.com/) - styling framework
-* [Materialize](https://materializecss.com/) - styling framework
 * [Javascript](https://www.javascript.com/) - website logic
 * [jQuery](https://jquery.com/) - manipulating the DOM
-* [Firebase](https://firebase.google.com/) - user authentication and data storage
-* [Foursquare API](https://developer.foursquare.com/) - venue/things to do search for cities
+* [MySQL](https://www.mysql.com/) - database
+* [Node.js](https://nodejs.org/en/) - JS runtime
+* [Express](https://expressjs.com/) - web framework for Node.js
+* [Handlebars](https://handlebarsjs.com/) - JS templates
 
 ______________
 ______________
 ______________
 ## Authors
-
 * [Olga Serenchenko](https://github.com/oserenchenko)
-* [Benjamin Wulf](https://github.com/benjaminwulf)
-* [Ericemp](https://github.com/ezemp)
-* Patricia Rippe
 
 ______________
 ______________
 ______________
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
